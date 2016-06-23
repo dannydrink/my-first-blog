@@ -4,20 +4,15 @@
     </head>
     <body>
         <div>
-            <h1>Games I want to buy</h1>
-            <ul><li>Blood Rage</li><li>Stone Age</li><li><strong>Pandemic The Cure</strong></li></ul>
+            <h1><a href="/">Daniel's Blog</a></h1>
         </div>
 
-        <div>
-            <h2><a href=>"My First Post"</a></h2>
-        </div>
-
-        <div>
-            <p>blah blah blah baalkjsdf
-            <br />
-                alskdfj;laksdfj
-            </p>
-
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
